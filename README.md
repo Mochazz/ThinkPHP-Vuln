@@ -14,7 +14,7 @@
 - [x] [ThinkPHP5漏洞分析之SQL注入(六)](/ThinkPHP5/ThinkPHP5漏洞分析之SQL注入6.md) 
 - [x] [ThinkPHP5漏洞分析之文件包含(七)](/ThinkPHP5/ThinkPHP5漏洞分析之文件包含7.md) 
 - [ ] [ThinkPHP5漏洞分析之代码执行(八)]() 
-- [ ] [ThinkPHP5漏洞分析之代码执行(九)]() 
+- [x] [ThinkPHP5漏洞分析之代码执行(九)](/ThinkPHP5/ThinkPHP5漏洞分析之代码执行9.md) 
 - [ ] [ThinkPHP5漏洞分析之代码执行(十)]() 
 
 ## Article list（ThinkPHP3）
