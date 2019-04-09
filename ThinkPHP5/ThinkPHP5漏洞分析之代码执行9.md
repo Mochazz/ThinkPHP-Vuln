@@ -1,4 +1,4 @@
-本系列文章将针对 **ThinkPHP** 的历史漏洞进行分析，今后爆出的所有 **ThinkPHP** 漏洞分析，也将更新于 [ThinkPHP-Vuln](https://github.com/Mochazz/ThinkPHP-Vuln) 项目上。本篇文章，将分析 **ThinkPHP** 中存在的 **远程代码执行漏洞** 。
+本系列文章将针对 **ThinkPHP** 的历史漏洞进行分析，今后爆出的所有 **ThinkPHP** 漏洞分析，也将更新于 [ThinkPHP-Vuln](https://github.com/Mochazz/ThinkPHP-Vuln) 项目上。本篇文章，将分析 **ThinkPHP** 中存在的 **远程代码执行** 漏洞。
 
 ## 漏洞概要
 
@@ -54,7 +54,7 @@ composer create-project --prefer-dist topthink/think tpdemo
 
 > 本次版本更新主要涉及一个安全更新，由于框架对控制器名没有进行足够的检测会导致在没有开启强制路由的情况下可能的getshell漏洞，受影响的版本包括5.0和5.1版本，推荐尽快更新到最新版本。
 
-我们可以查阅其 **commit** 记录，发现其改进了。接下来，我们直接跟进代码一探究竟。
+我们可以查阅其 **commit** 记录，发现其增加了对控制器名的检测。接下来，我们直接跟进代码一探究竟。
 
 ![3](ThinkPHP5漏洞分析之代码执行9/3.png)
 

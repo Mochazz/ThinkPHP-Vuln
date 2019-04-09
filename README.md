@@ -15,7 +15,7 @@
 - [x] [ThinkPHP5漏洞分析之文件包含(七)](/ThinkPHP5/ThinkPHP5漏洞分析之文件包含7.md) 
 - [ ] [ThinkPHP5漏洞分析之代码执行(八)]() 
 - [x] [ThinkPHP5漏洞分析之代码执行(九)](/ThinkPHP5/ThinkPHP5漏洞分析之代码执行9.md) 
-- [ ] [ThinkPHP5漏洞分析之代码执行(十)]() 
+- [x] [ThinkPHP5漏洞分析之代码执行(十)](/ThinkPHP5/ThinkPHP5漏洞分析之代码执行10.md) 
 
 ## Article list（ThinkPHP3）
 
