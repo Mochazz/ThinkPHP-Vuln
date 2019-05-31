@@ -13,7 +13,7 @@
 - [x] [ThinkPHP5漏洞分析之SQL注入(五)](/ThinkPHP5/ThinkPHP5漏洞分析之SQL注入5.md) 
 - [x] [ThinkPHP5漏洞分析之SQL注入(六)](/ThinkPHP5/ThinkPHP5漏洞分析之SQL注入6.md) 
 - [x] [ThinkPHP5漏洞分析之文件包含(七)](/ThinkPHP5/ThinkPHP5漏洞分析之文件包含7.md) 
-- [ ] [ThinkPHP5漏洞分析之代码执行(八)]() 
+- [x] [ThinkPHP5漏洞分析之代码执行(八)](/ThinkPHP5/ThinkPHP5漏洞分析之代码执行8.md) 
 - [x] [ThinkPHP5漏洞分析之代码执行(九)](/ThinkPHP5/ThinkPHP5漏洞分析之代码执行9.md) 
 - [x] [ThinkPHP5漏洞分析之代码执行(十)](/ThinkPHP5/ThinkPHP5漏洞分析之代码执行10.md) 
 
