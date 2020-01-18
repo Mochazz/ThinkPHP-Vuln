@@ -55,11 +55,11 @@ return [
 
 根据漏洞通告的时间线及官方的更新简述，我们可以从相近时间线的 **commit** 开始看起。
 
-![2](/img/ThinkPHP6.0.x任意文件创建/2.png)
+![2](ThinkPHP6.0.x任意文件创建/2.png)
 
 这里我们关注到更新中包含一个可能的 `Session` 安全隐患修正，我们看其具体代码。可以发现修复代码中主要多了 **ctype_alnum($id)** ，只允许 **$id** 由字母和数字构成。
 
-![3](/img/ThinkPHP6.0.x任意文件创建/3.png)
+![3](ThinkPHP6.0.x任意文件创建/3.png)
 
 再看 **奇安信 CERT** 对于漏洞的描述：
 
@@ -67,18 +67,18 @@ return [
 
 所以我们很容易想到该漏洞可能和文件存储 **session** 有关。我们发送正常数据包时，会发现 **session** 文件默认存储在 **/var/www/html/tp60/runtime/session** 下，其文件名格式类似 **sess_PHPSESSID** 。而当我们在 **PHPSESSID** 中插入特殊字符时，程序还是能正常生成对应文件。因此，这里存在任意文件创建漏洞，且通过插入路径穿越符，还存在文件覆盖和getshell的可能。
 
-![4](/img/ThinkPHP6.0.x任意文件创建/4.png)
+![4](ThinkPHP6.0.x任意文件创建/4.png)
 
 下面我们来看具体的漏洞代码。在 **session** 初始化时，程序会将 **PHPSESSID** 对应的值赋值给 **\think\session\Store:id** 。这里如果 **PHPSESSID** 对应值长度等于32，则无任何过滤直接赋值。
 
-![5](/img/ThinkPHP6.0.x任意文件创建/5.png)
+![5](ThinkPHP6.0.x任意文件创建/5.png)
 
 然后在程序构造响应数据返回给用户时，会先将 **session** 写入文件，而这个文件的文件名则由之前的  **PHPSESSID** 拼接而成。由于没有任何的过滤，这也就造成了任意文件创建、覆盖。如果在 **session** 数据可控的情况下，还能达到 **getshell** 的目的。
 
-![6](/img/ThinkPHP6.0.x任意文件创建/6.png)
+![6](ThinkPHP6.0.x任意文件创建/6.png)
 
-![7](/img/ThinkPHP6.0.x任意文件创建/7.png)
+![7](ThinkPHP6.0.x任意文件创建/7.png)
 
 最终利用效果如下：
 
-![1](/img/ThinkPHP6.0.x任意文件创建/1.png)
+![1](ThinkPHP6.0.x任意文件创建/1.png)

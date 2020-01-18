@@ -40,11 +40,11 @@ class Index
 
 这里我们找到一个可利用的 **Model** 类，其 **__destruct** 方法中调用了 **save** 方法，而 **save** 方法调用了 **updateData** 方法，我们跟进该方法看其具体实现。（下图对应文件 vendor/topthink/think-orm/src/Model.php ）
 
-![1](/img/ThinkPHP6.X反序列化利用链/1.png)
+![1](ThinkPHP6.X反序列化利用链/1.png)
 
 在 **updateData** 方法中，我们发现其调用了 **checkAllowFields** 方法，而这个方法恰恰存在字符串拼接（对应下图584行）。这里，我们就可以将 **$this->table** 或 **$this->suffix** 设置成类对象，然后在拼接的时候，触发其 **__toString** 方法，接着配合原先的链就可以完成整条POP链。
 
-![2](/img/ThinkPHP6.X反序列化利用链/2.png)
+![2](ThinkPHP6.X反序列化利用链/2.png)
 
 我们刚刚看的都是 **Model** 类的代码，而 **Model** 是一个抽象类，我们找到它的继承类就好了。这里我选取 **Pivot** 类，所以这条链的 **EXP** 如下（例如这里执行 `curl 127.0.0.1:8888` ）：
 
@@ -52,11 +52,11 @@ class Index
 已删除
 ```
 
-![3](/img/ThinkPHP6.X反序列化利用链/3.png)
+![3](ThinkPHP6.X反序列化利用链/3.png)
 
 最后整理一下攻击链的流程图：
 
-![4](/img/ThinkPHP6.X反序列化利用链/4.png)
+![4](ThinkPHP6.X反序列化利用链/4.png)
 
 ## 参考
 

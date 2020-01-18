@@ -6,7 +6,7 @@
 
 ## Article list（ThinkPHP6）
 
-- [x] [ThinkPHP6漏洞分析之任意文件创建(一)](/ThinkPHP6/ThinkPHP6.0.x任意文件创建.md) 
+- [x] [ThinkPHP6漏洞分析之任意文件创建(一)](/ThinkPHP6/ThinkPHP6.0任意文件写.md) 
 - [x] [ThinkPHP6漏洞分析之6.0.X反序列化POP链(二)](/ThinkPHP6/ThinkPHP6.X反序列化利用链.md) 
 
 ## Article list（ThinkPHP5）
